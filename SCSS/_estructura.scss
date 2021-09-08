@@ -1,0 +1,48 @@
+$fuenteCampo:20px;
+
+$tamanioTextoRecuadro:30px;
+
+$tamanioTextoLegend:22px;
+
+$tamanioSutitulo:30px;
+
+$max_ancho_img:100%;
+$max_alto_img:100%;
+$max_ancho_video:100%;
+$max_alto_video:100%;
+
+$alturaMain:2000px;
+$alturaGrillaVideos:50%;
+$alturaRecuadroFormulario:150px;
+$alturaMenuNavegacion:100%;
+
+$alturaSeccionImagen:400px;
+
+$anchoFieldSet:50%;
+
+$listaCamposFormulario:(
+    campoNombre:nombre,
+    campoApellido:apellido,
+    campoTelefono:telefono,
+    campoEmail:email,
+);
+
+$listaCuadrosFormulario:(
+    cuadroNombre:recuadro1,
+    cuadroApellido:recuadro2,
+    cuadroTelefono:recuadro3,
+    cuadroEmail:recuadro4,
+);
+
+$listaGrillaVideos:(
+    tituloVideo:titulo,
+    videoUno:Video1,
+    videoDos:Video2,
+);
+
+$listaGrillaFotos:(
+    tituloFoto:titulo,
+    fotoUno:Foto1,
+    fotoDos:Foto2,
+    fotoTres:fotoTres,
+);

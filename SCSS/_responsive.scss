@@ -1,0 +1,178 @@
+/***************************** Media Query *********************************/
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+
+
+//------------------------------------------------------------------
+
+@media only screen and (max-width:768px){
+
+    #grilla{
+        grid-template-columns: 100%;
+        grid-template-rows: 15% 3% 77% 5%;
+        grid-template-areas: 
+                            "header"
+                            "nav"
+                            "main"
+                            "footer";
+       
+    }
+
+    li{
+        font-size: 16px;
+    }
+
+    #tituloPagina{
+        font-size: 20px;
+        text-align: center;
+
+        position: relative;
+        top: 30%;
+    }
+
+    #recuadro{
+        grid-template-columns: 22% 30%;
+
+    }
+
+    #grillaFotos{
+        grid-template-rows: 5% 40% 40%;
+        grid-template-columns: 40% 40%;
+        grid-template-areas:
+                            "titulo titulo"
+                            "Foto1 Foto2"
+                            "Foto3 Foto4";
+        grid-row-gap: 1%;
+    }
+
+    #grillaVideos{
+        
+        grid-template-rows: 1% 50%;
+        grid-template-columns: 50% 50%;
+        grid-template-areas:
+                            "titulo titulo"
+                            "Video1 Video2";
+        grid-column-gap:2%;
+        
+
+    }
+
+    #headerFlexible{
+        display: flex;
+        flex-direction: row;
+    }
+
+    #logo{
+        width: 40%;
+    }
+
+}
+
+//------------------------------------------------------------------
+
+@media only screen and (max-width:480px){
+
+    #grilla{
+        grid-template-columns: 100%;
+        grid-template-rows: 15% 10% 70% 5%;
+        grid-template-areas: 
+                            "header"
+                            "nav"
+                            "main"
+                            "footer";
+       
+    }
+    
+    #menu{
+        grid-template-columns: 100%;
+        grid-template-rows: 20% 20% 20% 20% 20%;
+        justify-items: left;
+
+        height: 100%;
+    }
+     
+
+    #tituloPagina{
+        font-size: 0.7rem;
+        text-align: center;
+        top: 0%;
+        overflow: hidden;
+        width: 0;
+        height: 0;
+    }
+
+    li{
+        font-size: 15px;
+    }
+
+    fieldset{
+        width: 25%;
+    }
+
+    #contenedorBotones{
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    #recuadro{
+        grid-template-columns: 100%;
+        grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10%;
+        grid-template-areas:
+                            "nombre"
+                            "recuadro1"
+                            "apellido" 
+                            "recuadro2"
+                            "telefono"
+                            "recuadro3"
+                            "email"
+                            "recuadro4";
+        height: 100%;
+    }
+
+    #grillaFotos{
+        grid-template-rows: 10% 30% 30% 30%;
+        grid-template-columns: 60%;
+        grid-template-areas:
+                            "titulo"
+                            "Foto1"
+                            "Foto2"
+                            "Foto3";
+        
+    }
+
+    #grillaVideos{
+        grid-template-rows: 10% 5% 40% 40%;
+        grid-template-columns: 100%;
+        grid-template-areas:
+                            "."
+                            "titulo"
+                            "Video1"
+                            "Video2";
+        
+
+    }
+
+    #headerFlexible{
+        display: flex;
+        flex-direction: column;
+        background-image: url("imagenes/plc-background-2.jpg");
+    }
+
+    #logo{
+        height: 100%;
+        width: 100%;
+    }
+
+    #imagenSection{
+        height: 400px;
+    }
+
+}
+
+
+
+
+/***************************** Fin de Media Query *********************************/  

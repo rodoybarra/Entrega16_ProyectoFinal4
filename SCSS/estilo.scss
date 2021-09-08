@@ -1,0 +1,260 @@
+@import "colores";
+@import "estructura";
+
+
+
+@mixin estiloTexto($colorTexto,$tamanioFuente){
+    color:$colorTexto;
+    font-size:$tamanioFuente;
+}
+    
+body{
+    margin: 0;
+    background-color: $colorFondoBody;
+}
+
+#grilla{
+    display:grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 15% 3% 75% 7%;
+    grid-template-areas: 
+                        "header"
+                        "nav"
+                        "main"
+                        "footer";
+
+    height: $alturaMain;
+}
+
+header{
+    grid-area: header;
+    background-image: url("../Assets/imagenes/plc-background-2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: $colorFuente;
+}
+
+nav{
+    grid-area: nav;    
+}
+
+main{
+    grid-area: main;
+
+}
+
+footer{
+    grid-area: footer;
+    background-color: $colorFondoFooter;
+    color: $colorFuente;
+    text-align: center;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    @include estiloTexto($colorFuente,20px)
+}
+
+a{
+    color: $colorTextoEnlace;
+}
+
+li a:hover{
+    border-bottom: 2px solid $colorFuente;
+}
+
+
+img{
+    max-width: $max_ancho_img;
+    max-height: $max_alto_img;
+    width: $max_ancho_img;
+    height: $max_alto_img;
+}
+
+video{
+    max-width: $max_ancho_video;
+    max-height: $max_alto_video;
+    width: $max_ancho_video;
+    height: $max_alto_video;
+}
+
+#headerFlexible{
+    display: flex;
+    flex-direction: row;
+}
+
+.formatoSubtitulo{
+    margin:0;
+    color: $colorFuente;
+    text-decoration: underline;
+}
+
+.tituloTexto{
+    color:$colorTextoTitulo;
+    text-decoration: underline;
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+.subtitulos{
+    color: $colorFuente;
+    text-decoration: underline;
+    font-size: $tamanioSutitulo;
+    
+}
+
+p{
+    color: $colorFuente;
+    text-indent: 15px;
+    font-family:'Times New Roman', Times, serif;
+}
+
+#menu{
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 100%;
+    justify-items: center;
+    align-items: center;
+    background-image: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,21,121,1) 30%, rgba(0,212,255,1) 100%);
+    height: $alturaMenuNavegacion;
+    
+}
+
+#tituloPagina{
+    font-size: 30px;
+    text-align: center;
+    position: relative;
+    left: 8%;
+    top: 10%;
+}
+
+fieldset{
+    width: $anchoFieldSet;
+}
+
+#recuadro{
+    display: grid;
+    grid-template-columns: 20% 40%;
+    grid-template-rows: 20% 20% 20% 20%;
+    grid-template-areas:
+                        "nombre recuadro1"
+                        "apellido recuadro2"
+                        "telefono recuadro3"
+                        "email recuadro4";
+    justify-items: left;
+    align-content: space-between;
+    height: $alturaRecuadroFormulario;
+}
+
+
+@each $campo, $valorCampo in $listaCamposFormulario {
+    ##{$campo}{
+        grid-area:$valorCampo ;
+    }
+}
+
+@each $recuadro, $valorRecuadro in $listaCuadrosFormulario{
+    ##{$recuadro}{
+        grid-area:$valorRecuadro ;
+    }
+}
+
+legend{
+    @include estiloTexto($colorFuente,$tamanioTextoLegend)
+}
+
+#formatoCamposFormulario{
+    @include estiloTexto($colorFuente,$fuenteCampo)
+}
+
+#contenedorComentario{
+    display: flex;
+    flex-direction: row;
+}
+
+#contenedorBotones{
+    display: flex;
+    justify-content: space-around;
+}
+
+#grillaFotos{
+    display: grid;
+    grid-template-rows: 6% 80%;
+    grid-template-columns: 30% 30% 30%;
+    grid-template-areas:
+                        "titulo titulo titulo"
+                        "Foto1 Foto2 Foto3";
+    grid-column-gap: 5%;
+    justify-items: center;
+    align-content: space-between;
+    
+}
+
+@each $valor, $areaValor in $listaGrillaFotos{
+    ##{$valor}{
+        grid-area:$areaValor ;
+    }
+}
+
+
+#grillaVideos{
+    display: grid;
+    grid-template-rows: 6% 70%;
+    grid-template-areas:
+                        "titulo titulo titulo"
+                        "Video1 . Video2";
+    
+    height: $alturaGrillaVideos;
+    justify-items: center;
+}
+
+
+    
+@each $valor, $areaValor in $listaGrillaVideos{
+    ##{$valor}{
+        grid-area:$areaValor ;
+    }
+}
+
+#fondoSectionInicio{
+    background-color:$colorFondoSeccionInicial;
+    transition: background-color 4s;
+}
+
+#fondoSectionInicio:hover{
+    background-color:$colorFondoSeccionFinal;
+}
+
+#imagenSection{
+    height: $alturaSeccionImagen;
+}
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+
+.b-example-divider {
+    height: 3rem;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+  }
+  
+  .bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+  }
+  
+  @import "responsive";
